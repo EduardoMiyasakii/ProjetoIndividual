@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, skyblue, rgb(158, 142, 187));
+}
+.quadrado {
+     /* background-color:rgb(37, 17, 76);  */
+    padding: 6px;
+    border: 3px solid white;
+    /* border-color: white; */
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px white;
+}
+
+#Funciona{
+    position: relative;
+    margin-top: 30px;
+    transition: 0.5s;
+    width: 300px;
+    height: 400px;
+}
+input[type="text"]{
+    border: none; 
+    margin-top: 40px;
+    border-radius: 60px;
+    padding: 15px 95px 8px 35px;
+     outline: none; 
+}
+input[type="password"]{
+    border: none; 
+    margin-top: 40px;
+    border-radius: 60px;
+    padding: 15px 95px 8px 35px;
+     outline: none; 
+
+}
+button[type="submit"]{
+    background-color: rgb(83, 56, 133); 
+    color: white;
+    border-radius: 30px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 0 8px 15px;
+    font-size: 15px;
+    margin-top: 40px;
+    cursor: pointer;
+    box-shadow: 4px 4px 20px  white;
+}
+
+.divCheck{
+    margin: 10px 0 0 5px;
+    width: 80%;
+    font-size: 16px;
+}
+ion-icon{
+    position: absolute;
+    left: 0px;
+    padding: 10px 10px;
+}
+
+ #quadradoLogin {
+    position: relative;
+    left: 850px;
+    top: 3px; 
+ } 
+ #quadradoImagem{
+     border-color: transparent; 
+     position: relative;
+     top: 0px;
+     right: 450px;
+     width: 780px; 
+     height: 500px;  
+     background-image:url(SiteVini.webp);
+    background-size: cover;  
+    box-shadow: 15px 15px 15px  black;
+
+} 
+
+.cadastrar {
+    border: transparent; 
+   background:transparent;
+}
+
+.cadastrar a {
+color: white;
+text-decoration: none;
+}
