@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="cadastro.css" />
   <!-- <link rel="icon" href="./assets/icon/favicon2.ico" />  -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" /> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
 <body>
@@ -20,32 +20,32 @@
   <div class="quadrado" id="quadradoLogin">
 
     <div id="Funciona">
-        <input id="nome_input" type="text" placeholder="Digite seu nome" required>
-        <ion-icon name="person-outline" style="top: -45px;"></ion-icon>
+      <input id="nome_input" type="text" placeholder="Digite seu nome" required>
+      <ion-icon name="person-outline" style="top: -45px;"></ion-icon>
 
-        <input id="email_input" type="text" placeholder="Digite seu Email" required>
-        <ion-icon name="mail-outline" style="top: 22px;"></ion-icon>
+      <input id="email_input" type="text" placeholder="Digite seu Email" required>
+      <ion-icon name="mail-outline" style="top: 22px;"></ion-icon>
 
-        <input id="cpf_input" type="text" placeholder="Digite seu CPF" required>
-        <ion-icon name="id-card-outline" style="top: 92px;"></ion-icon>
+      <input id="cpf_input" type="text" placeholder="Digite seu CPF" required>
+      <ion-icon name="id-card-outline" style="top: 92px;"></ion-icon>
 
-        <input id="senha_input" type="password" placeholder="Digite sua Senha" required>
-        <ion-icon name="key-outline" style="top: 170px;"></ion-icon> 
+      <input id="senha_input" type="password" placeholder="Digite sua Senha" required>
+      <ion-icon name="key-outline" style="top: 170px;"></ion-icon>
 
-        <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua Senha" required>
-        <ion-icon name="key-outline" style="top: 249px;"></ion-icon>
+      <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua Senha" required>
+      <ion-icon name="key-outline" style="top: 249px;"></ion-icon>
 
-        <button onclick="cadastrar()" type="submit">Cadastrar-se</button>
-        <div style="margin-top: 13px;color: white;">
-            <span>Já possui login?</span>
-                <button class="logar"><a href="login.html">Entrar</a></button>
-        </div>
+      <button onclick="cadastrar()" type="submit">Cadastrar-se</button>
+      <div style="margin-top: 13px;color: white;">
+        <span>Já possui login?</span>
+        <button class="logar"><a href="login.html">Entrar</a></button>
+      </div>
     </div>
-</div>
-<div class="quadrado" id="quadradoImagem">
-</div>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </div>
+  <div class="quadrado" id="quadradoImagem">
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
@@ -61,21 +61,42 @@
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value
 
+    var posicaoArroba = emailVar.indexOf("@");
+    var terminaCCom = emailVar.endsWith(".com");
+    var tamanhoSenha = senhaVar.length;
+    var tamanhoCpf = cpfVar.length;
+
     if (
       nomeVar == "" ||
       emailVar == "" ||
-      cpfVar == ""||
+      cpfVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" 
-   
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      confirmacaoSenhaVar == ""
 
-       finalizarAguardar();
-       return false;
-    } else {
+    ) {
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Mensagem de erro para todos os campos em branco)";
+
+      // finalizarAguardar();
+      alert("Preencha todos os campos");
+      return false;
+    }
+    else if (posicaoArroba < 0) {
+
+      alert("O email precisa conter '@'");
+    }
+    else if (terminaCCom == false) {
+
+      alert("O email precisa terminar com '.com'");
+    }
+    else if (tamanhoCpf < 14) {
+      alert("Cpf deve conter 14 caracteres");
+    }
+    else if (tamanhoSenha < 8) {
+      alert("Senha deve conter 8 ou mais caracteres");
+    }
+    else {
       setInterval(sumirMensagem, 5000);
     }
 
@@ -116,7 +137,7 @@
         console.log(`#ERRO: ${resposta}`);
         finalizarAguardar();
       });
-      return false;
+    return false;
 
   }
 
@@ -124,3 +145,5 @@
     cardErro.style.display = "none";
   }
 </script>
+
+
