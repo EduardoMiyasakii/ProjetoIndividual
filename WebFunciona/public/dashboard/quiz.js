@@ -6,10 +6,13 @@ const content = document.querySelector(".content");
 const contentFinish = document.querySelector(".finish");
 const btnRestart = document.querySelector(".finish button");
 
+
 import questions from "./questions.js"; 
 
 let currentIndex = 0;
 let questionsCorrect = 0;
+
+var questoesCorretasVar = questionsCorrect;
 
 btnRestart.onclick = () => {
     content.style.display = "flex";
@@ -39,9 +42,9 @@ function finish() {
     content.style.display = "none";
     contentFinish.style.display = "flex";
 
-    if(questionsCorrect == questions.length){
-        window.alert("Parabéns,acertou todas perguntas");
-    } 
+    // if(questionsCorrect == questions.length){
+    //     window.alert("Parabéns,acertou todas perguntas");
+    // } 
 }
 
 function loadQuestion(){
@@ -71,3 +74,43 @@ function loadQuestion(){
 
 
 loadQuestion();
+
+function CadastrarQuestoes(){
+
+    fetch("/cadastrarQuiz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          questoesCorretasServer: questoesCorretasVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+            // cardErro.style.display = "block";
+  
+            // mensagem_erro.innerHTML =
+            //   "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+  
+            // setTimeout(() => {
+            //   window.location = "login.html";
+            // }, "2000");
+  
+            // limparFormulario();
+          } else {
+            throw "Houve um erro ao tentar cadastrar no quiz!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        //   finalizarAguardar();
+        });
+        return false;
+  
+    }
+

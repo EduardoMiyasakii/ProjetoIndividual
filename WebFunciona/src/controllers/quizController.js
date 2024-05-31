@@ -1,28 +1,18 @@
-var usuarioModel = require("../models/usuarioModel");
+var quizModel = require("../models/quizModel");
 
-function cadastrar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    // var nome = req.body.nomeServer;
-    // var email = req.body.emailServer;
-    // var cpf = req.body.cpfServer;
-    // var senha = req.body.senhaServer;
+function cadastrarQuiz(req, res) {
+
     var acertos = req.body.questionCorrection;
 
    
     // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (cpf == undefined) {
-        res.status(400).send("Seu cpf está undefined!");
-    }  else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
+    if (acertos == undefined) {
+        res.status(400).send("Seus acertos está undefined!");
     } 
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome,email, cpf,senha)
+        quizModel.cadastrar(acertos)
             .then(
                 function (resultado) {
                     res.json(resultado);
