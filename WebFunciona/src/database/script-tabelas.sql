@@ -10,7 +10,7 @@ CREATE DATABASE Cadastro;
 
 USE Cadastro;
 
-CREATE TABLE usuario (
+CREATE TABLE Usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
@@ -18,6 +18,15 @@ CREATE TABLE usuario (
 	senha VARCHAR(50),
 	fk_cpf INT,
 	FOREIGN KEY(fk_cpf) REFERENCES usuario(id);
+);
+
+CREATE TABLE Quiz (
+	idQuiz int primary key AUTO_INCREMENT,
+	questoes int,
+	questoesCorretas int,
+	fkUsuario int,
+	CONSTRAINT fkQuizUsuario FOREIGN KEY(fkUsuario)
+	REFERENCES Usuario(id)
 );
 
 CREATE TABLE aviso (
