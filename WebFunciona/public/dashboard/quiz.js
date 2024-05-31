@@ -45,6 +45,7 @@ function finish() {
     // if(questionsCorrect == questions.length){
     //     window.alert("Parabéns,acertou todas perguntas");
     // } 
+    CadastrarQuestoes();
 }
 
 function loadQuestion(){
