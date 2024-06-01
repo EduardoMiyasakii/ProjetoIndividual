@@ -155,8 +155,8 @@ section {
 .Home{
     width: 100%;
     min-height: 95vh;
-    /* background-image: url(SiteVini.webp);
-    background-size: cover !important; */
+     background-image: url(SiteVini.webp);
+    background-size: cover !important; 
     background-position: center !important;     
     padding: 10px 10%;
     display: flex;
@@ -171,7 +171,7 @@ section {
 }
 
 .Home .content span{
-    
+
     display: block;
     font-size: 1rem;
     color: white;
@@ -183,7 +183,7 @@ section {
     color: #fff;
     padding: 1rem 0;
 
-}
+} 
 
 .about{
     display: flex;

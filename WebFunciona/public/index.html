@@ -39,7 +39,7 @@
     </header>
 
     <main>
-
+        <div id="Home">
         <div class="slider">
             <div class="slides">
                 <input type="radio" name="radio-btn" id="radio1">
@@ -66,16 +66,16 @@
             </div>
 
             <div class="manual-navigation">
-
+                
                 <label for="radio1" class="manual-btn" id="btn-radio1"></label>
                 <label for="radio2" class="manual-btn" id="btn-radio2"></label>
-                <label for="radio3" class="manual-btn" id="btn-radio3"></label>
-                <label for="radio4" class="manual-btn" id="btn-radio4"></label>
-    
+                <!-- <label for="radio3" class="manual-btn" id="btn-radio3"></label>
+                    <label for="radio4" class="manual-btn" id="btn-radio4"></label> -->
+                    
+                </div>
+                
             </div>
-              
         </div>
-        </section>
         <!-- Fim da home -->
 
         <section id="about" class="about">
@@ -226,13 +226,13 @@
   document.getElementById("btn-radio1").style.backgroundColor = "#FFFFFF"
 
   function nextImage() {
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 2; i++) {
       document.getElementById("btn-radio" + i).style.backgroundColor = "";
 
     }
     count++;
     console.log("i = " + count);
-    if (count > 4) {
+    if (count > 2) {
       count = 1;
     }
     document.getElementById("radio" + count).checked = true
