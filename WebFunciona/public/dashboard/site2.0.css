@@ -287,6 +287,10 @@ section {
     position: relative;
 }
 
+.aboutMe .box-container .box:hover .content{
+    transform: translateY(0);
+}
+
 .aboutMe .box-container .box img{
     height: 100%;
     width: 100%;

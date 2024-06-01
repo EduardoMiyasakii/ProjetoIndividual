@@ -272,17 +272,20 @@ section {
 
 .aboutMe .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(29rem,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
     gap: 1.5rem;
     padding: 10px;
 }
 
 .aboutMe .box-container .box{
-
     /* Tamanho da imagem */
-    height: 45rem;
+    height:45rem;
     overflow: hidden;
     position: relative;
+}
+
+.aboutMe .box-container .box:hover .content{
+    transform: translateY(0);
 }
 
 .aboutMe .box-container .box img{
@@ -340,9 +343,7 @@ transform: scale(1.1);
 
 .News .slideNews .imagem {
     /* Tamanho da imagem nas noticias */
-   
     height: 25rem;
-    /* height: 100px; */
     width: 100%;
     overflow: hidden;
 }
@@ -354,12 +355,12 @@ object-fit: cover;
 }
 .News .slideNews .content{
 padding: 2rem;
-}
+} 
 
 .News .slideNews .content .link{
     padding-bottom: 1.5rem;
     font-size: 1.5rem;
-}
+} 
 
 .News .slideNews .content .link a {
     font-size: 2rem;
@@ -367,6 +368,7 @@ padding: 2rem;
 }
 
 .News .slideNews .content .link a:hover{
+transform: translateY(0);
 color: skyblue;
 }
 
