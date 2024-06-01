@@ -155,8 +155,8 @@ section {
 .Home{
     width: 100%;
     min-height: 95vh;
-    background-image: url(SiteVini.webp);
-    background-size: cover !important;
+    /* background-image: url(SiteVini.webp);
+    background-size: cover !important; */
     background-position: center !important;     
     padding: 10px 10%;
     display: flex;
@@ -329,16 +329,16 @@ section {
     color: green;
 }
 
-.News .slide {
+.News .slideNews {
     background:#111;
     margin-bottom: 7rem;
 }
 
-.News .slide:hover .imagem img {
+.News .slideNews:hover .imagem img {
 transform: scale(1.1);
 }
 
-.News .slide .imagem {
+.News .slideNews .imagem {
     /* Tamanho da imagem nas noticias */
    
     height: 25rem;
@@ -347,42 +347,42 @@ transform: scale(1.1);
     overflow: hidden;
 }
 
-.News .slide .imagem img{
+.News .slideNews .imagem img{
 height: 100%;
 width: 100%;
 object-fit: cover;
 }
-.News .slide .content{
+.News .slideNews .content{
 padding: 2rem;
 }
 
-.News .slide .content .link{
+.News .slideNews .content .link{
     padding-bottom: 1.5rem;
     font-size: 1.5rem;
 }
 
-.News .slide .content .link a {
+.News .slideNews .content .link a {
     font-size: 2rem;
     color: white;
 }
 
-.News .slide .content .link a:hover{
+.News .slideNews .content .link a:hover{
 color: skyblue;
 }
 
-.News .slide .content .link span{
+.News .slideNews .content .link span{
 font-size: 2rem;
 color: #fff;
 padding: 0 1rem;
 }
 
-.News .slide .content h3{
+.News .slideNews .content h3{
 font-size: 2.5rem;
 color: #fff;
 line-height: 1.5;
 }
 
-.News .slide .content p{
+.News .slideNews .content p{
 font-size: 2rem;
 color: #aaa;
 line-height: 2;

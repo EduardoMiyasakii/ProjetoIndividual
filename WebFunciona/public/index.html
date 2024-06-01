@@ -11,6 +11,8 @@
     <script src="./js/sessao.js"></script>
 
     <link rel="stylesheet" href="site2.0.css">
+    <link rel="stylesheet" href="slide.css">
+
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">  -->
 </head>
 
@@ -37,39 +39,62 @@
     </header>
 
     <main>
-        <section id="Home" class="Home">
 
-            <div class="swiper home-slider">
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
 
-                <div class="swiper-wrapper">
+                <div class="slide first">
+                    <img src="assets/SiteVini.webp" alt="img_carrossel" id="img-slide1" style="height: 700px;">
                     <div class="content">
                         <span style="color: white;font-size: 50px;">A luta não é de um, é de todos</span>
-                        <!-- <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3> -->
+                        <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3> 
+                    </div>
+                    
+                </div>
+                <div class="slide">
+                    <img src="assets/Corinthians wesley.jpg" alt="img_carrosel" style="height: 700px;"
+                    <div class="content">
+                        <span style="color: white;font-size: 50px;">Fds, é de todos</span>
+                        <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3> 
                     </div>
                 </div>
+                
             </div>
 
+            <div class="manual-navigation">
+
+                <label for="radio1" class="manual-btn" id="btn-radio1"></label>
+                <label for="radio2" class="manual-btn" id="btn-radio2"></label>
+                <label for="radio3" class="manual-btn" id="btn-radio3"></label>
+                <label for="radio4" class="manual-btn" id="btn-radio4"></label>
+    
+            </div>
+              
+        </div>
         </section>
         <!-- Fim da home -->
 
         <section id="about" class="about">
             <div class="imagem">
-                <img src="Site.jpeg" alt="">
+                <img src="assets/Site.jpeg" alt="">
             </div>
             <div class="content">
                 <h2 style="font-size: 5.6rem">Por que esse tema?</h2>
-                <!-- <h3>updasdasdasdasdasdasdasdasdasddasdasdsa</h3> -->
-                <!-- <p>Escrever algo sobre</p> -->
+    
                 <div class="box-container">
                     <div class="box">
-                        <!-- <p>Oi</p> -->
-                        <h3><i><br>Este tema foi escolhido, pois, esportes são umas das coisas que mais gosto de praticar e também assistir e ultimamente algo que está me incomodando são diversos ataques a jogadores,por conta da sua cor de pele.<br><br>Esses ataques não refletem apenas nas 4 linhas, mas tudo está sendo afetado.<br><br>Então fiz esse site para conscientizar o máximo de pessoas possíveis e tentar reverter essa situação</i></h3>
+                        <h3><i><br>Este tema foi escolhido, pois, esportes são umas das coisas que mais gosto de
+                                praticar e também assistir e ultimamente algo que está me incomodando são diversos
+                                ataques a jogadores,por conta da sua cor de pele.<br><br>Esses ataques não refletem
+                                apenas nas 4 linhas, mas tudo está sendo afetado.<br><br>Então fiz esse site para
+                                conscientizar o máximo de pessoas possíveis e tentar reverter essa situação</i></h3>
                     </div>
-
                 </div>
-
             </div>
-            <!-- <a href="#" class="btn">Ler mais</a> -->
             </div>
         </section>
         <!-- Fim da sobre -->
@@ -79,9 +104,9 @@
             <div class="swiper blogs-slider">
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide slide">
+                    <div class="swiper-slide slideNews">
                         <div class="imagem">
-                            <img src="Site.jpeg" alt="">
+                            <img src="assets/Site.jpeg" alt="">
                         </div>
                         <div class="content">
                             <div class="link"><a href="#">GE Globo</a> <span>|</span> <a href="#"
@@ -94,9 +119,9 @@
                         </div>
                     </div>
 
-                    <div class="swiper-slide slide">
+                    <div class="swiper-slide slideNews">
                         <div class="imagem">
-                            <img src="BillRussel.jpg" alt="">
+                            <img src="assets/BillRussel.jpg" alt="">
                         </div>
                         <div class="content">
                             <div class="link"><a href="#">Por ESPN</a> <span>|</span> <a href="#">22 de outubro</a>
@@ -120,7 +145,7 @@
             <h1 class="heading"><span>Sobre mim</span></h1>
             <div class="box-container">
                 <div class="box">
-                    <img src="Site.jpeg" alt="">
+                    <img src="assets/Site.jpeg" alt="">
                     <div class="content">
                         <span>Dev</span>
                         <h3>Eduardo Kendi de sousa Miyasaki</h3>
@@ -189,3 +214,28 @@
 </body>
 
 </html>
+
+<script>
+     var count = 1
+  document.getElementById("radio1").checked = true
+
+  setInterval(function () {
+    nextImage()
+  }, 4000)
+
+  document.getElementById("btn-radio1").style.backgroundColor = "#FFFFFF"
+
+  function nextImage() {
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById("btn-radio" + i).style.backgroundColor = "";
+
+    }
+    count++;
+    console.log("i = " + count);
+    if (count > 4) {
+      count = 1;
+    }
+    document.getElementById("radio" + count).checked = true
+    document.getElementById("btn-radio" + count).style.backgroundColor = "#FFFFFF"
+  }
+</script>
