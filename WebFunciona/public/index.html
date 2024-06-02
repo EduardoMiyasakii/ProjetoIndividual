@@ -10,7 +10,7 @@
 
     <script src="./js/sessao.js"></script>
 
-     <link rel="stylesheet" href="site2.0.css"> 
+    <link rel="stylesheet" href="site2.0.css">
     <link rel="stylesheet" href="slide.css">
 
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">  -->
@@ -40,41 +40,41 @@
 
     <main>
         <div id="Home">
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
 
-                <div class="slide first">
-                    <img src="assets/SiteVini.webp" alt="img_carrossel" id="img-slide1" style="height: 700px;">
-                    <div class="content">
-                        <span style="color: white;font-size: 50px;">A luta não é de um, é de todos</span>
-                        <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3> 
+                    <div class="slide first">
+                        <img src="assets/SiteVini.webp" alt="img_carrossel" id="img-slide1" style="height: 700px;">
+                        <div class="content">
+                            <span style="color: white;font-size: 50px;">A luta não é de um, é de todos</span>
+                            <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+                        </div>
+
                     </div>
-                    
-                </div>
-                <div class="slide">
-                    <img src="assets/Corinthians wesley.jpg" alt="img_carrosel" style="height: 700px;"
-                    <div class="content">
+                    <div class="slide">
+                        <img src="assets/Corinthians wesley.jpg" alt="img_carrosel" style="height: 700px;" <div
+                            class="content">
                         <span style="color: white;font-size: 50px;">Fds, é de todos</span>
-                        <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3> 
+                        <h3 style="color: white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="manual-navigation">
-                
+
                 <label for="radio1" class="manual-btn" id="btn-radio1"></label>
                 <label for="radio2" class="manual-btn" id="btn-radio2"></label>
                 <!-- <label for="radio3" class="manual-btn" id="btn-radio3"></label>
                     <label for="radio4" class="manual-btn" id="btn-radio4"></label> -->
-                    
-                </div>
-                
+
             </div>
+
+        </div>
         </div>
         <!-- Fim da home -->
 
@@ -84,7 +84,7 @@
             </div>
             <div class="content">
                 <h2 style="font-size: 5.6rem">Por que esse tema?</h2>
-    
+
                 <div class="box-container">
                     <div class="box">
                         <h3><i><br>Este tema foi escolhido, pois, esportes são umas das coisas que mais gosto de
@@ -151,8 +151,10 @@
                         <h3>Eduardo Kendi de sousa Miyasaki</h3>
                         <div class="share">
                             <p style="color: white;font-size: 18px;">Olá, sou o Eduardo tenho 17 anos
-                            e sempre fui muito fã de esportes, desde os 4 anos de idade jogo futebol na rua com meus amigos e acredito que por isso seja tão apaixonado, não só por futebol, mas, por grande parte dos esportes.</p>
-                        
+                                e sempre fui muito fã de esportes, desde os 4 anos de idade jogo futebol na rua com meus
+                                amigos e acredito que por isso seja tão apaixonado, não só por futebol, mas, por grande
+                                parte dos esportes.</p>
+
                         </div>
                     </div>
 
@@ -216,26 +218,26 @@
 </html>
 
 <script>
-     var count = 1
-  document.getElementById("radio1").checked = true
+    var count = 1
+    document.getElementById("radio1").checked = true
 
-  setInterval(function () {
-    nextImage()
-  }, 4000)
+    setInterval(function () {
+        nextImage()
+    }, 4000)
 
-  document.getElementById("btn-radio1").style.backgroundColor = "#FFFFFF"
+    document.getElementById("btn-radio1").style.backgroundColor = "#FFFFFF"
 
-  function nextImage() {
-    for (let i = 1; i <= 2; i++) {
-      document.getElementById("btn-radio" + i).style.backgroundColor = "";
+    function nextImage() {
+        for (let i = 1; i <= 2; i++) {
+            document.getElementById("btn-radio" + i).style.backgroundColor = "";
 
+        }
+        count++;
+        console.log("i = " + count);
+        if (count > 2) {
+            count = 1;
+        }
+        document.getElementById("radio" + count).checked = true
+        document.getElementById("btn-radio" + count).style.backgroundColor = "#FFFFFF"
     }
-    count++;
-    console.log("i = " + count);
-    if (count > 2) {
-      count = 1;
-    }
-    document.getElementById("radio" + count).checked = true
-    document.getElementById("btn-radio" + count).style.backgroundColor = "#FFFFFF"
-  }
 </script>
