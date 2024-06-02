@@ -2,7 +2,7 @@ var quizModel = require("../models/quizModel");
 
 function cadastrarQuiz(req, res) {
 
-    var acertos = req.body.questionCorrection;
+    var acertos = req.body.questoesCorretasServer;
 
    
     // Faça as validações dos valores
@@ -12,7 +12,7 @@ function cadastrarQuiz(req, res) {
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        quizModel.cadastrar(acertos)
+        quizModel.cadastrarQuiz(acertos)
             .then(
                 function (resultado) {
                     res.json(resultado);

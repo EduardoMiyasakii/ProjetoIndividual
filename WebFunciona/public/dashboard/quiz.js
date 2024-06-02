@@ -45,7 +45,7 @@ function finish() {
     // if(questionsCorrect == questions.length){
     //     window.alert("Parabéns,acertou todas perguntas");
     // } 
-    CadastrarQuestoes();
+    CadastrarQuiz();
 }
 
 function loadQuestion(){
@@ -76,7 +76,7 @@ function loadQuestion(){
 
 loadQuestion();
 
-function CadastrarQuestoes(){
+function CadastrarQuiz(){
 
     fetch("/cadastrarQuiz", {
         method: "POST",

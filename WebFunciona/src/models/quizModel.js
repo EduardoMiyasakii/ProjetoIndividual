@@ -13,6 +13,5 @@ function cadastrarQuiz(acertos) {
 }
 
 module.exports = {
-    autenticar,
-    cadastrar
+    cadastrarQuiz
 };
