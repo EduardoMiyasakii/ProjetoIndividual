@@ -26,14 +26,17 @@
       <input id="email_input" type="text" placeholder="Digite seu Email" required>
       <ion-icon name="mail-outline" style="top: 22px;"></ion-icon>
 
+      <input id="pais_input" type="text" placeholder="Digite seu País" required>
+      <ion-icon name="earth-outline" style="top: 92px;"></ion-icon>
+
       <input id="cpf_input" type="text" placeholder="Digite seu CPF" required>
-      <ion-icon name="id-card-outline" style="top: 92px;"></ion-icon>
+      <ion-icon name="id-card-outline" style="top: 162px;"></ion-icon>
 
       <input id="senha_input" type="password" placeholder="Digite sua Senha" required>
-      <ion-icon name="key-outline" style="top: 170px;"></ion-icon>
+      <ion-icon name="key-outline" style="top: 240px;"></ion-icon>
 
       <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua Senha" required>
-      <ion-icon name="key-outline" style="top: 249px;"></ion-icon>
+      <ion-icon name="key-outline" style="top: 319px;"></ion-icon>
 
       <button onclick="cadastrar()" type="submit">Cadastrar-se</button>
       <div style="margin-top: 13px;color: white;">
@@ -57,6 +60,7 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
+    var paisVar = pais_input.value;
     var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -70,6 +74,7 @@
     if (
       nomeVar == "" ||
       emailVar == "" ||
+      paisVar == "" ||
       cpfVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
@@ -112,6 +117,7 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
+        paisServer: paisVar,
         senhaServer: senhaVar,
         cpfServer: cpfVar
       }),
