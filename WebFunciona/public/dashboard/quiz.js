@@ -94,7 +94,7 @@ function finish() {
           console.log("resposta: ", resposta);
   
           if (resposta.ok) {
-            console.log("Oi")
+           
             // cardErro.style.display = "block";
   
             // mensagem_erro.innerHTML =
