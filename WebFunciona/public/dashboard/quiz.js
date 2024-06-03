@@ -12,73 +12,74 @@ import questions from "./questions.js";
 let currentIndex = 0;
 let questionsCorrect = 0;
 
-var questoesCorretasVar = questionsCorrect;
 
 btnRestart.onclick = () => {
-    content.style.display = "flex";
-    contentFinish.style.display = "none";
-
-    currentIndex = 0;
-    questionsCorrect = 0;
-    loadQuestion();
+  content.style.display = "flex";
+  contentFinish.style.display = "none";
+  
+  currentIndex = 0;
+  questionsCorrect = 0;
+  loadQuestion();
 };
 
 function nextQuestion(e){
-
-    if(e.target.getAttribute("data-correct") === "true") {
-        questionsCorrect++;
-    }
-
-    if(currentIndex < questions.length - 1){
-        currentIndex++;
-        loadQuestion();
-    } else {
-        finish();
-    }
+  
+  if(e.target.getAttribute("data-correct") === "true") {
+    questionsCorrect++;
+  }
+  
+  if(currentIndex < questions.length - 1){
+    currentIndex++;
+    loadQuestion();
+  } else {
+    finish();
+  }
 }
 
 function finish() {
-    textFinish.innerHTML = `Você acertou ${questionsCorrect} de ${questions.length}`;
-    content.style.display = "none";
-    contentFinish.style.display = "flex";
-
-    // if(questionsCorrect == questions.length){
+  textFinish.innerHTML = `Você acertou ${questionsCorrect} de ${questions.length}`;
+  content.style.display = "none";
+  contentFinish.style.display = "flex";
+  
+  // if(questionsCorrect == questions.length){
     //     window.alert("Parabéns,acertou todas perguntas");
     // } 
     CadastrarQuiz();
-}
-
-function loadQuestion(){
-
+  }
+  
+  function loadQuestion(){
+    
     spnQtd.innerHTML = `${currentIndex + 1}/${questions.length}`;
     const item = questions[currentIndex];
     answers.innerHTML = "";
     question.innerHTML = item.question;
-
+    
     item.answers.forEach((answer) => {
         const div = document.createElement("div");
-
+        
         div.innerHTML = `
         <button class="answer" data-correct="${answer.correct}">
         ${answer.option}
         </button>
         `;
-
+        
         answers.appendChild(div);
-
-    });
-
-     document.querySelectorAll(".answer").forEach((item) => {
+        
+      });
+      
+      document.querySelectorAll(".answer").forEach((item) => {
         item.addEventListener("click", nextQuestion);
-    });
-}
+      });
+    }
+    
+    
+    loadQuestion();
+    
+    function CadastrarQuiz(){
+      
+      var questoesCorretasVar = questionsCorrect;
 
-
-loadQuestion();
-
-function CadastrarQuiz(){
-
-    fetch("/cadastrarQuiz", {
+      fetch("/Quiz/cadastrarQuiz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

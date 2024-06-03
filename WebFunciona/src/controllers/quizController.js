@@ -31,6 +31,5 @@ function cadastrarQuiz(req, res) {
 }
 
 module.exports = {
-    autenticar,
-    cadastrar
+    cadastrarQuiz
 }
