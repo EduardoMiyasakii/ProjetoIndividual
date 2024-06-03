@@ -89,6 +89,7 @@ function finish() {
       console.log(idUsuarioVar)
       
       var questoesCorretasVar = questionsCorrect;
+      var questoesVar = questions.length;
 
       fetch("/Quiz/cadastrarQuiz", {
         method: "POST",
@@ -98,8 +99,9 @@ function finish() {
         body: JSON.stringify({
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
+          questoesServer: questoesVar,
           questoesCorretasServer: questoesCorretasVar,
-          IdServer: idUsuarioVar
+          idUsuarioServer: idUsuarioVar
         }),
       })
         .then(function (resposta) {

@@ -103,7 +103,7 @@ main{
     display: flex;
     flex-direction: column;
     height: 300px;
-    gap:5px;
+    gap:10px;
 }
 
 button{
