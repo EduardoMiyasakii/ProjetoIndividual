@@ -102,7 +102,7 @@ main{
 .answers{
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 400px;
     gap:5px;
 }
 
