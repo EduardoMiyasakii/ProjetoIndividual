@@ -16,9 +16,7 @@ CREATE TABLE Usuario (
 	email VARCHAR(50),
 	pais VARCHAR (45),
 	cpf CHAR(14)
-	senha VARCHAR(50),
-	fk_cpf INT,
-	FOREIGN KEY(fk_cpf) REFERENCES usuario(id);
+	senha VARCHAR(50)
 );
 
 CREATE TABLE Quiz (

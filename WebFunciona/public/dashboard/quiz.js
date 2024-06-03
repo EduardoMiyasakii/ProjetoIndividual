@@ -37,6 +37,14 @@ function nextQuestion(e){
 }
 
 function finish() {
+
+  // var nome = sessionStorage.NOME_USUARIO;
+
+  // var b_usuario = document.getElementById("b_usuario");
+
+  // b_usuario.innerHTML = nome;
+  
+
   textFinish.innerHTML = `Você acertou ${questionsCorrect} de ${questions.length}`;
   content.style.display = "none";
   contentFinish.style.display = "flex";
@@ -76,6 +84,9 @@ function finish() {
     loadQuestion();
     
     function CadastrarQuiz(){
+
+      var idUsuarioVar = sessionStorage.ID_USUARIO;
+      console.log(idUsuarioVar)
       
       var questoesCorretasVar = questionsCorrect;
 
@@ -87,7 +98,8 @@ function finish() {
         body: JSON.stringify({
           // crie um atributo que recebe o valor recuperado aqui
           // Agora vá para o arquivo routes/usuario.js
-          questoesCorretasServer: questoesCorretasVar
+          questoesCorretasServer: questoesCorretasVar,
+          IdServer: idUsuarioVar
         }),
       })
         .then(function (resposta) {

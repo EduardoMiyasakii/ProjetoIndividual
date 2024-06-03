@@ -3,6 +3,7 @@ var quizModel = require("../models/quizModel");
 function cadastrarQuiz(req, res) {
 
     var acertos = req.body.questoesCorretasServer;
+    var idUsuario = req.body.IdServer;
 
    
     // Faça as validações dos valores
@@ -12,7 +13,7 @@ function cadastrarQuiz(req, res) {
     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        quizModel.cadastrarQuiz(acertos)
+        quizModel.cadastrarQuiz(acertos , idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
