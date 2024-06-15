@@ -24,7 +24,7 @@
 
             <li class="list">
                 <a href="DashbordQuiz.html">
-                    <span class="icon"><ion-icon name="football"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="title">Quiz</span>
                 </a>
             </li>
@@ -71,6 +71,9 @@
 
 
     <script>
+
+        b_usuario = sessionStorage.NOME_USUARIO;
+
         const list = document.querySelectorAll('.list');
         function activeLink(){
             list.forEach((item) =>

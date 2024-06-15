@@ -23,7 +23,7 @@
 
             <li class="list active">
                 <a href="DashbordQuiz.html" >
-                    <span class="icon"><ion-icon name="football"></ion-icon></span>
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
                     <span class="title">Quiz</span>
                 </a>
             </li>
@@ -129,17 +129,19 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Questões',
-                data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            },
-            {
                 label: 'Questões Corretas',
                 data: [],
                 fill: false,
-                borderColor: 'rgb(199, 52, 52)',
+                backgroundColor: 'rgb(135,206,235)',
+                borderColor: 'rgb(135,206,235)',
+                tension: 0.1
+            },
+            {
+                label: 'Questões',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(135,206,235)',
+                borderColor: 'rgb(135,206,235)',
                 tension: 0.1
             }]
         };
@@ -151,9 +153,9 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-        labels.push(registro.porcentagem +`%`);
-            dados.datasets[0].data.push(registro.questoes);
-            dados.datasets[1].data.push(registro.questoesCorretas);
+            labels.push(registro.porcentagem +`%`);
+            dados.datasets[0].data.push(registro.questoesCorretas);
+            dados.datasets[1].data.push(registro.questoes);
             // dados.datasets[1].data.push(registro.temperatura);
         }
 
@@ -167,9 +169,40 @@
 
         // Criando estrutura para plotar gráfico - config
         const config = {
-            type: 'bar',
-            data: dados,
-        };
+    type: 'bar',
+    data: dados,
+    options: {
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 19 // Tamanho da fonte da legenda
+                    }
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16 // Tamanho da fonte das labels do eixo X
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Porcentagem de acertos',
+                    font: {
+                        size: 18 // Tamanho da fonte do título do eixo X
+                    }
+                }
+            },
+            y: {
+                display:false
+            }
+        }
+    }
+};
+
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
